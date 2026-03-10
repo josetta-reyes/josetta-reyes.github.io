@@ -1,10 +1,10 @@
-# ✦ Josetta's — Portfolio
+## ✦ Josetta's — Portfolio
 
 > *Latina Software Engineer · UT Dallas · Dallas, TX*
 
 A personal portfolio website built with vanilla HTML, CSS, and JavaScript.
 
-💗**Live site:** [yourusername.github.io](https://yourusername.github.io)
+💗**Live site:** [josetta-reyes.github.io](https://yourusername.github.io)
 
 ---
 
@@ -65,9 +65,9 @@ Or use a local dev server like [Live Server](https://marketplace.visualstudio.co
 
 ## 📬 Contact
 
-- 📧 [reyesjosetta@gmail.com](mailto:your@email.com)
-- 💼 [linkedin.com/in/josetta-reyes](https://linkedin.com/in/yourname)
-- 🐙 [github.com/josetta-reyes](https://github.com/yourname)
+- 📧 [reyesjosetta@gmail.com](mailto:reyesjosetta@email.com)
+- 💼 [linkedin.com/in/josetta-reyes](https://linkedin.com/in/josetta-reyes)
+- 🐙 [github.com/josetta-reyes](https://github.com/josetta-reyes)
 
 ---
 
