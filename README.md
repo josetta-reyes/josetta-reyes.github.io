@@ -1,16 +1,16 @@
-## ✦ Josetta's — Portfolio
+## ✦ Josetta's - Portfolio
 
 > *Latina Software Engineer · UT Dallas · Dallas, TX*
 
 A personal portfolio website built with vanilla HTML, CSS, and JavaScript.
 
-💗**Live site:** [josetta-reyes.github.io](https://yourusername.github.io)
+💗**Live site:** [josetta-reyes.github.io](https://josetta-reyes.github.io)
 
 ---
 
 ## About
 
-Hi, I'm **Josetta** — a Latina software engineer and recent B.S. Software Engineering graduate from the **The University of Texas at Dallas**. This portfolio showcases my projects, skills, and background as I look for full-time roles in software engineering, ML/AI, and technical project management.
+Hi, I'm **Josetta** a Latina software engineer and recent B.S. Software Engineering graduate from the **The University of Texas at Dallas**. This portfolio showcases my projects, skills, and background as I look for full-time roles in software engineering, ML/AI, and technical project management.
 
 ---
 
@@ -54,8 +54,8 @@ portfolio/
 No build steps needed, just open the file directly in your browser:
 
 ```bash
-git clone https://github.com/yourusername/yourusername.github.io
-cd yourusername.github.io
+git clone https://github.com/josetta-reyes/josetta-reyes.github.io
+cd josetta-reyes.github.io
 open index.html
 ```
 
