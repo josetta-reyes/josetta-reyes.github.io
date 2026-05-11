@@ -6,7 +6,7 @@
   <title>Josetta — Software Engineer</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
-    :root {
+    : root {
       --cream: #fdf6ee;
       --warm: #f5ece0;
       --rose: #c8506a;
@@ -21,10 +21,8 @@
       --border: rgba(200,80,106,0.15);
       --shadow: 0 20px 60px rgba(61,31,45,0.12);
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-
     body {
       font-family: 'Outfit', sans-serif;
       background: var(--cream);
@@ -32,7 +30,6 @@
       overflow-x: hidden;
       cursor: none;
     }
-
     /* Cursor */
     .cursor {
       position: fixed;
@@ -54,10 +51,8 @@
       transform: translate(-50%, -50%);
       transition: transform 0.14s ease, width 0.25s, height 0.25s;
     }
-
     /* Floating petals canvas */
     #petals { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
-
     /* Decorative blobs */
     .blob {
       position: fixed;
@@ -76,7 +71,6 @@
       background: radial-gradient(circle, rgba(201,147,58,0.12), transparent 70%);
       bottom: 200px; left: -80px;
     }
-
     /* NAV */
     nav {
       position: fixed; top: 0; left: 0; right: 0;
@@ -115,7 +109,6 @@
       border-radius: 100px;
       letter-spacing: 0.05em;
     }
-
     /* HERO */
     .hero {
       min-height: 100vh;
@@ -126,7 +119,6 @@
       position: relative;
       gap: 4rem;
     }
-
     .hero::before {
       content: 'S';
       position: absolute;
@@ -143,9 +135,7 @@
       user-select: none;
       z-index: 0;
     }
-
     .hero-content { position: relative; z-index: 1; }
-
     .hero-eyebrow {
       display: inline-flex; align-items: center; gap: 0.6rem;
       font-size: 0.72rem;
@@ -160,7 +150,6 @@
       border-radius: 50%;
       background: var(--gold);
     }
-
     .hero-name {
       font-family: 'Playfair Display', serif;
       font-weight: 900;
@@ -178,7 +167,6 @@
       display: block;
       color: var(--plum);
     }
-
     .hero-title {
       font-family: 'Playfair Display', serif;
       font-style: italic;
@@ -187,7 +175,6 @@
       margin-bottom: 1.5rem;
       letter-spacing: -0.01em;
     }
-
     .hero-desc {
       font-size: 0.9rem;
       line-height: 1.85;
@@ -196,9 +183,7 @@
       margin-bottom: 2.5rem;
     }
     .hero-desc strong { color: var(--text); font-weight: 500; }
-
     .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
-
     .btn {
       display: inline-flex; align-items: center; gap: 0.6rem;
       padding: 0.85rem 2rem;
@@ -231,9 +216,7 @@
       color: var(--rose);
       background: var(--rose-pale);
     }
-
     .hero-visual { position: relative; z-index: 1; }
-
     .identity-card {
       background: #fff;
       border-radius: 20px;
@@ -262,6 +245,13 @@
       flex-shrink: 0;
       border: 3px solid #fff;
       box-shadow: 0 4px 16px rgba(200,80,106,0.2);
+      overflow: hidden;
+    }
+    .avatar img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 50%;
     }
     .card-name {
       font-family: 'Playfair Display', serif;
@@ -285,7 +275,6 @@
       background: var(--rose-pale); color: var(--rose);
     }
     .card-tag.gold { background: #fdf0dd; color: var(--gold); }
-
     /* SECTION */
     .section { padding: 6rem 4rem; position: relative; }
     .section-eyebrow {
@@ -305,7 +294,6 @@
       line-height: 1.05; margin-bottom: 3rem; color: var(--plum);
     }
     .section-title em { font-style: italic; color: var(--rose); }
-
     /* SKILLS */
     .skills-grid {
       display: grid;
@@ -328,7 +316,6 @@
       font-size: 1rem; color: var(--plum); margin-bottom: 0.35rem;
     }
     .skill-detail { font-size: 0.75rem; color: var(--muted); line-height: 1.65; }
-
     /* PROJECTS */
     .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
     .project-card {
@@ -341,6 +328,7 @@
     }
     .project-card:nth-child(1)::before { background: linear-gradient(90deg, var(--rose), var(--rose-light)); }
     .project-card:nth-child(2)::before { background: linear-gradient(90deg, var(--gold), var(--gold-light)); }
+    .project-card:nth-child(3)::before { background: linear-gradient(90deg, var(--plum-soft), var(--rose-light)); }
     .project-card:hover { transform: translateY(-5px); box-shadow: 0 24px 60px rgba(61,31,45,0.1); }
     .project-num { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.75rem; }
     .project-name { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--plum); margin-bottom: 0.75rem; line-height: 1.2; }
@@ -353,7 +341,28 @@
     .project-links { display: flex; gap: 1rem; }
     .plink { font-size: 0.72rem; font-weight: 500; text-decoration: none; color: var(--rose); display: flex; align-items: center; gap: 0.3rem; transition: color 0.2s; }
     .plink:hover { color: var(--plum); }
-
+    /* PROJECT IMAGE */
+    .project-img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1.5rem;
+      object-fit: cover;
+      height: 180px;
+      background: var(--rose-pale);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      color: var(--muted);
+      border: 1px dashed var(--rose-light);
+      overflow: hidden;
+    }
+    .project-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
     /* ABOUT */
     .about-wrap { display: grid; grid-template-columns: 1fr 1.1fr; gap: 5rem; align-items: center; }
     .about-text p { font-size: 0.88rem; line-height: 1.95; color: var(--muted); margin-bottom: 1.2rem; }
@@ -372,7 +381,6 @@
     .fun-fact-icon { font-size: 1.6rem; margin-bottom: 0.5rem; }
     .fun-fact-val { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 900; color: var(--rose); line-height: 1; margin-bottom: 0.3rem; }
     .fun-fact-label { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
-
     /* CONTACT */
     .contact-inner { max-width: 680px; }
     .contact-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.85; margin-bottom: 2.5rem; }
@@ -386,7 +394,6 @@
     .contact-card-icon { font-size: 1.2rem; }
     .contact-card-label { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 0.15rem; }
     .contact-card-val { font-size: 0.8rem; font-weight: 500; color: var(--text); }
-
     /* FOOTER */
     footer {
       border-top: 1px solid var(--border); padding: 2rem 4rem;
@@ -395,10 +402,8 @@
     }
     .footer-heart { color: var(--rose); }
     .divider { height: 1px; background: var(--border); margin: 0 4rem; }
-
     .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .fade-up.visible { opacity: 1; transform: none; }
-
     .hero-content > * { opacity: 0; transform: translateY(18px); animation: fadeUp 0.7s ease forwards; }
     .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
     .hero-content > *:nth-child(2) { animation-delay: 0.25s; }
@@ -407,7 +412,6 @@
     .hero-content > *:nth-child(5) { animation-delay: 0.55s; }
     .hero-visual { opacity: 0; animation: fadeUp 0.9s ease 0.5s forwards; }
     @keyframes fadeUp { to { opacity: 1; transform: none; } }
-
     @media (max-width: 900px) {
       nav { padding: 1.1rem 1.5rem; }
       .nav-links { display: none; }
@@ -421,13 +425,11 @@
   </style>
 </head>
 <body>
-
   <div class="cursor" id="cursor"></div>
   <div class="cursor-ring" id="cursorRing"></div>
   <div class="blob blob-1"></div>
   <div class="blob blob-2"></div>
   <canvas id="petals"></canvas>
-
   <nav>
     <a href="#" class="nav-logo">Josetta Reyes ✦</a>
     <ul class="nav-links">
@@ -438,7 +440,6 @@
     </ul>
     <span class="nav-badge">✨ Open to work</span>
   </nav>
-
   <section class="hero">
     <div class="hero-content">
       <div class="hero-eyebrow">
@@ -458,11 +459,12 @@
         <a href="#contact" class="btn btn-ghost">Let's Connect</a>
       </div>
     </div>
-
     <div class="hero-visual">
       <div class="identity-card">
         <div class="card-header">
-          <div class="avatar">👩🏽‍💻</div>
+          <div class="avatar">
+            <img src="./josetta-headshot.png" alt="Josetta Reyes" onerror="this.style.display='none';this.parentElement.innerHTML='👩🏽‍💻'"/>
+          </div>
           <div>
             <div class="card-name">Josetta Reyes</div>
             <div class="card-role">Software Engineer · Dallas, TX</div>
@@ -491,19 +493,17 @@
           </div>
         </div>
         <div class="card-tags">
-          <span class="card-tag">React</span>
+          <span class="card-tag">React Native</span>
           <span class="card-tag">Python</span>
           <span class="card-tag gold">PyTorch</span>
-          <span class="card-tag">Node.js</span>
-          <span class="card-tag gold">TypeScript</span>
+          <span class="card-tag">Firebase</span>
+          <span class="card-tag gold">TensorFlow</span>
           <span class="card-tag">Java</span>
         </div>
       </div>
     </div>
   </section>
-
   <div class="divider"></div>
-
   <section class="section" id="skills">
     <div class="section-eyebrow">What I Work With</div>
     <h2 class="section-title">My <em>Stack</em></h2>
@@ -516,89 +516,115 @@
       <div class="skill-card">
         <span class="skill-icon">⚙️</span>
         <div class="skill-name">Backend</div>
-        <div class="skill-detail">Node.js, Python, Java, C/C++</div>
+        <div class="skill-detail">Node.js, Python, Flask, Java, C/C++</div>
       </div>
       <div class="skill-card">
         <span class="skill-icon">🧠</span>
         <div class="skill-name">ML / AI</div>
-        <div class="skill-detail">TensorFlow, PyTorch, scikit-learn, from data pipelines to deployed models.</div>
+        <div class="skill-detail">TensorFlow, PyTorch, scikit-learn, LLMs (Ollama), from data pipelines to deployed models.</div>
       </div>
       <div class="skill-card">
         <span class="skill-icon">🗄️</span>
         <div class="skill-name">Data & DBs</div>
-        <div class="skill-detail">SQL, PostgreSQL, MongoDB, Firebase, data modeling, and optimization.</div>
+        <div class="skill-detail">SQL, MySQL, Firebase, NumPy, Pandas, Jupyter Notebook, data modeling, and optimization.</div>
       </div>
       <div class="skill-card">
         <span class="skill-icon">☕</span>
         <div class="skill-name">Languages</div>
-        <div class="skill-detail">Python, JavaScript, TypeScript, Java, C/C++, SQL, y un poco de español 🇲🇽</div>
+        <div class="skill-detail">Python, JavaScript, Java, C/C++, SQL, HTML, y un poco de español 🇲🇽</div>
       </div>
       <div class="skill-card">
         <span class="skill-icon">📋</span>
         <div class="skill-name">Leadership</div>
-        <div class="skill-detail">Shpetinas, SHPE, Robotics, Agile, Jira, Git, Github, technical project management, cross-functional collaboration.</div>
+        <div class="skill-detail">SHPE, SHPEtinas, Agile, Git, Github, technical project management, cross-functional collaboration.</div>
       </div>
     </div>
   </section>
-
   <div class="divider"></div>
-
   <section class="section" id="projects">
     <div class="section-eyebrow">What I've Built</div>
     <h2 class="section-title">Featured <em>Projects</em></h2>
     <div class="projects-grid">
+
+      <!-- PROJECT 1: UpQuest -->
       <div class="project-card fade-up">
-        <div class="project-num">01 · Project</div>
+        <div class="project-num">01 · Mobile App</div>
         <div class="project-name">UpQuest App</div>
+        <!-- To add a screenshot: upload your image to the repo and replace the src below -->
+        <!-- <div class="project-img"><img src="./screenshots/upquest.png" alt="UpQuest App"/></div> -->
         <p class="project-desc">
-          Insert my projects here: the problem it solves, what makes it interesting, and the impact. Focus on outcomes, not just features. What changed because of this project?
+          A <strong>gamified mobile productivity app</strong> that turns daily habits into RPG-style quests. Users complete missions, capture proof-of-completion, and level up by earning XP, making self-improvement actually fun. I led the team as Project Manager and built the core UI, including the Character Dashboard, Mission Checklist, XP progress bar, and level-up animations.
         </p>
         <div class="project-tags">
-          <span class="ptag ptag-rose">React</span>
-          <span class="ptag ptag-gold">Python</span>
-          <span class="ptag ptag-plum">Node.js</span>
-          <span class="ptag ptag-plum">PostgreSQL</span>
+          <span class="ptag ptag-rose">React Native</span>
+          <span class="ptag ptag-rose">JavaScript</span>
+          <span class="ptag ptag-gold">Firebase</span>
+          <span class="ptag ptag-plum">Expo Router</span>
         </div>
         <div class="project-links">
-          <a href="#" class="plink">GitHub →</a>
-          <a href="#" class="plink">Live Demo →</a>
+          <a href="https://github.com/josetta-reyes" target="_blank" class="plink">GitHub →</a>
         </div>
       </div>
+
+      <!-- PROJECT 2: LSTM Stock Prediction -->
       <div class="project-card fade-up">
-        <div class="project-num">02 · Project</div>
-        <div class="project-name">Project Two Title</div>
+        <div class="project-num">02 · ML / AI</div>
+        <div class="project-name">Stock Price Prediction with LSTM</div>
+        <!-- To add a screenshot: upload your chart image to the repo and replace the src below -->
+        <!-- <div class="project-img"><img src="./screenshots/lstm-stock.png" alt="LSTM Stock Prediction Chart"/></div> -->
         <p class="project-desc">
-          Describe my second project. Add one of my ML/AI projects
+          Trained a <strong>Long Short-Term Memory (LSTM) recurrent neural network</strong> on 5 years of Apple stock price data to forecast future price trends. After hyperparameter tuning and architecture adjustments, we achieved an <strong>R² of 0.62</strong> and reduced overfitting by 25% compared to the baseline model, with results framed as actionable insights for investment tools.
         </p>
         <div class="project-tags">
-          <span class="ptag ptag-gold">PyTorch</span>
+          <span class="ptag ptag-gold">Python</span>
           <span class="ptag ptag-rose">TensorFlow</span>
-          <span class="ptag ptag-plum">Python</span>
-          <span class="ptag ptag-plum">REST API</span>
+          <span class="ptag ptag-plum">Jupyter Notebook</span>
+          <span class="ptag ptag-plum">NumPy / Pandas</span>
         </div>
         <div class="project-links">
-          <a href="#" class="plink">GitHub →</a>
-          <a href="#" class="plink">Write-up →</a>
+          <a href="https://github.com/AnishS04/CS4375_Term_Project" target="_blank" class="plink">GitHub →</a>
         </div>
       </div>
+
+      <!-- PROJECT 3: LLM Oracle App -->
+      <div class="project-card fade-up">
+        <div class="project-num">03 · AI / Full Stack</div>
+        <div class="project-name">LLM-Powered Oracle App</div>
+        <!-- To add a screenshot: upload your image to the repo and replace the src below -->
+        <!-- <div class="project-img"><img src="./screenshots/oracle-app.png" alt="Oracle App"/></div> -->
+        <p class="project-desc">
+          Built at <strong>The Fellow Consulting Group</strong>, this app guides developers in generating safety-validation test cases for autonomous and software systems. Integrated <strong>Ollama</strong> as a local LLM with a Flask backend, built a custom GUI for interactive consulting, and deployed a private web app across distributed teams using combinatorial testing research to sharpen LLM responses.
+        </p>
+        <div class="project-tags">
+          <span class="ptag ptag-gold">Python</span>
+          <span class="ptag ptag-rose">Flask</span>
+          <span class="ptag ptag-plum">Ollama (LLM)</span>
+          <span class="ptag ptag-plum">HTML</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/josetta-reyes" target="_blank" class="plink">GitHub →</a>
+        </div>
+      </div>
+
     </div>
   </section>
-
   <div class="divider"></div>
-
   <section class="section" id="about">
     <div class="section-eyebrow">The Person Behind the Code</div>
     <h2 class="section-title">About <em>Me</em></h2>
     <div class="about-wrap">
       <div class="about-text fade-up">
         <p>
-          Hello! I'm <strong>Josetta Reyes</strong> a <span class="highlight">Latina software engineer</span> from Dallas, TX. I recently graduated from <strong>The University of Texas at Dallas</strong> with a B.S. in Software Engineering and a passion for building things that help others and make life a little easier. 
+          Hello! I'm <strong>Josetta Reyes</strong>, a <span class="highlight">Latina software engineer</span> from Dallas, TX. I recently graduated from <strong>The University of Texas at Dallas</strong> with a B.S. in Software Engineering and a passion for building things that help others and make life a little easier.
         </p>
         <p>
           I love working at the intersection of <strong>beautiful design and powerful engineering</strong>. Whether I'm training a neural network or crafting a perfect UI, I bring the same love & attention to detail to everything I build.
         </p>
         <p>
-          When I'm not coding, you can find me in nature💚. I'm bilingual 🇲🇽 and proud to be part of a growing community of Latinas in tech.
+          Beyond code, I'm deeply committed to <strong>uplifting Latinas in tech</strong>. As SHPEtinas Director at UTD, I relaunched the chapter, drove 40% membership growth, and mentored 15+ leaders across Texas, work I'm truly proud of. SHPE Diligence Award recipient.
+        </p>
+        <p>
+          When I'm not coding, you can find me in nature 💚. I'm bilingual 🇲🇽 and proud to be part of a growing community of Latinas in tech.
         </p>
         <div style="margin-top: 2rem;">
           <a href="#contact" class="btn btn-primary">Let's Work Together ✦</a>
@@ -611,9 +637,9 @@
           <div class="fun-fact-label">Years Coding</div>
         </div>
         <div class="fun-fact">
-          <div class="fun-fact-icon">🛠️</div>
-          <div class="fun-fact-val">5+</div>
-          <div class="fun-fact-label">Technologies</div>
+          <div class="fun-fact-icon">🚀</div>
+          <div class="fun-fact-val">3+</div>
+          <div class="fun-fact-label">Projects Shipped</div>
         </div>
         <div class="fun-fact">
           <div class="fun-fact-icon">🎓</div>
@@ -621,16 +647,14 @@
           <div class="fun-fact-label">SWE · UTD</div>
         </div>
         <div class="fun-fact">
-          <div class="fun-fact-icon">📝</div>
-          <div class="fun-fact-val">5+</div>
-          <div class="fun-fact-label">Leadership Experience</div>
+          <div class="fun-fact-icon">🌟</div>
+          <div class="fun-fact-val">200+</div>
+          <div class="fun-fact-label">Latinas Impacted</div>
         </div>
       </div>
     </div>
   </section>
-
   <div class="divider"></div>
-
   <section class="section" id="contact">
     <div class="section-eyebrow">Say Hello</div>
     <h2 class="section-title">Let's <em>Connect</em></h2>
@@ -663,12 +687,10 @@
       </div>
     </div>
   </section>
-
   <footer>
     <span>© 2025 Josetta Reyes · Made with <span class="footer-heart">♥</span> in Dallas, TX</span>
     <span>Latina in Tech 🩷 · UTD Software Engineering</span>
   </footer>
-
   <script>
     // Custom cursor
     const cursor = document.getElementById('cursor');
@@ -691,14 +713,12 @@
         ring.style.width = '32px'; ring.style.height = '32px';
       });
     });
-
     // Floating petal particles
     const canvas = document.getElementById('petals');
     const ctx = canvas.getContext('2d');
     function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
-
     const particles = Array.from({ length: 30 }, () => ({
       x: Math.random() * window.innerWidth,
       y: Math.random() * window.innerHeight,
@@ -710,7 +730,6 @@
       spin: (Math.random() - 0.5) * 0.018,
       color: Math.random() > 0.5 ? '#c8506a' : '#c9933a',
     }));
-
     (function animatePetals() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       particles.forEach(p => {
@@ -728,7 +747,6 @@
       });
       requestAnimationFrame(animatePetals);
     })();
-
     // Scroll reveal
     const observer = new IntersectionObserver(entries => {
       entries.forEach((entry, i) => {
