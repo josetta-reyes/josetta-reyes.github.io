@@ -6,7 +6,7 @@
   <title>Josetta — Software Engineer</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
-    : root {
+    :root {
       --cream: #fdf6ee;
       --warm: #f5ece0;
       --rose: #c8506a;
@@ -237,11 +237,11 @@
       margin-bottom: 1.8rem;
     }
     .avatar {
-      width: 64px; height: 64px;
+      width: 120px; height: 120px;
       border-radius: 50%;
       background: linear-gradient(135deg, var(--rose-pale), var(--gold-light));
       display: flex; align-items: center; justify-content: center;
-      font-size: 1.8rem;
+      font-size: 3.2rem;
       flex-shrink: 0;
       border: 3px solid #fff;
       box-shadow: 0 4px 16px rgba(200,80,106,0.2);
@@ -384,6 +384,43 @@
     .fun-fact-icon { font-size: 1.6rem; margin-bottom: 0.5rem; }
     .fun-fact-val { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 900; color: var(--rose); line-height: 1; margin-bottom: 0.3rem; }
     .fun-fact-label { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
+    /* COMMUNITY */
+    .community-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .community-card {
+      background: #fff; border-radius: 20px; padding: 2.2rem;
+      border: 1.5px solid rgba(200,80,106,0.2);
+      box-shadow: 0 6px 24px rgba(61,31,45,0.08);
+      transition: all 0.3s;
+      position: relative; overflow: hidden;
+    }
+    .community-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+      background: linear-gradient(90deg, var(--rose), var(--gold));
+    }
+    .community-card:hover { transform: translateY(-5px); box-shadow: 0 24px 60px rgba(61,31,45,0.1); }
+    .community-card-top { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem; }
+    .community-icon-wrap {
+      font-size: 1.8rem;
+      width: 56px; height: 56px;
+      background: var(--rose-pale);
+      border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .community-role { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--plum); line-height: 1.2; }
+    .community-org { font-size: 0.78rem; color: var(--muted); margin-top: 0.25rem; }
+    .community-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.8; margin-bottom: 1.2rem; }
+    .community-list { list-style: none; padding: 0; }
+    .community-list li {
+      font-size: 0.82rem; color: var(--text); line-height: 1.6;
+      padding: 0.7rem 0 0.7rem 1.5rem; position: relative;
+      border-top: 1px solid var(--border);
+    }
+    .community-list li:first-child { border-top: none; }
+    .community-list li::before {
+      content: '✦'; position: absolute; left: 0; color: var(--rose);
+    }
+    .community-list li strong { color: var(--rose); font-weight: 700; }
     /* CONTACT */
     .contact-inner { max-width: 680px; }
     .contact-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.85; margin-bottom: 2.5rem; }
@@ -422,6 +459,7 @@
       .hero { grid-template-columns: 1fr; padding: 7rem 1.5rem 3rem; gap: 2rem; }
       .section { padding: 4rem 1.5rem; }
       .projects-grid { grid-template-columns: 1fr; }
+      .community-grid { grid-template-columns: 1fr; }
       .about-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
       footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
       .divider { margin: 0 1.5rem; }
@@ -439,6 +477,7 @@
     <ul class="nav-links">
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#community">Community</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -610,6 +649,49 @@
         </div>
       </div>
 
+    </div>
+  </section>
+  <div class="divider"></div>
+  <section class="section tinted" id="community">
+    <div class="section-eyebrow">Lifting As I Climb</div>
+    <h2 class="section-title">Community <em>Impact</em></h2>
+    <div class="community-grid">
+      <div class="community-card fade-up">
+        <div class="community-card-top">
+          <span class="community-icon-wrap">🌸</span>
+          <div>
+            <div class="community-role">SHPEtinas Director</div>
+            <div class="community-org">UT Dallas Chapter</div>
+          </div>
+        </div>
+        <p class="community-desc">
+          Took over SHPEtinas at UTD when the chapter had gone quiet and brought it back to life as a real community for Latinas in engineering. I'm still mentoring the women who stepped up after me.
+        </p>
+        <ul class="community-list">
+          <li><strong>40%</strong> membership growth after the relaunch</li>
+          <li>Still mentoring <strong>15+</strong> Latina leaders across Texas</li>
+          <li>Hosted the <strong>largest Latina engineering event</strong> in UTD history</li>
+          <li>Set the chapter up to keep running after I graduated</li>
+        </ul>
+      </div>
+      <div class="community-card fade-up">
+        <div class="community-card-top">
+          <span class="community-icon-wrap">🏆</span>
+          <div>
+            <div class="community-role">SHPE Diligence Award</div>
+            <div class="community-org">Society of Hispanic Professional Engineers</div>
+          </div>
+        </div>
+        <p class="community-desc">
+          Helped bring our UTD SHPE chapter back up after COVID slowed everything down. Attended SHPE Nationals two years in a row and kept showing up for the Latinx engineering community at every level.
+        </p>
+        <ul class="community-list">
+          <li>Helped revive UTD SHPE post-COVID</li>
+          <li>Attended <strong>SHPE Nationals</strong> 2 years in a row</li>
+          <li><strong>200+</strong> Latinas impacted across initiatives</li>
+          <li>Diligence Award recipient for sustained contribution</li>
+        </ul>
+      </div>
     </div>
   </section>
   <div class="divider"></div>
