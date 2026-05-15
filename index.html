@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Josetta — Software Engineer</title>
+  <title>Josetta · Software Engineer</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
     :root {
@@ -113,8 +113,8 @@
     .hero {
       min-height: 100vh;
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      align-items: center;
+      grid-template-columns: 1fr 1fr;
+      align-items: flex-start;
       padding: 8rem 4rem 4rem;
       position: relative;
       gap: 4rem;
@@ -237,7 +237,7 @@
       margin-bottom: 1.8rem;
     }
     .avatar {
-      width: 120px; height: 120px;
+      width: 180px; height: 180px;
       border-radius: 50%;
       background: linear-gradient(135deg, var(--rose-pale), var(--gold-light));
       display: flex; align-items: center; justify-content: center;
@@ -258,11 +258,11 @@
       font-weight: 700;
       font-size: 1.15rem;
       color: var(--plum);
+      white-space: nowrap;
     }
-    .card-role { font-size: 0.75rem; color: var(--muted); margin-top: 0.2rem; }
+    .card-role { font-size: 0.75rem; color: var(--muted); margin-top: 0.2rem; white-space: nowrap; }
     .card-divider { height: 1px; background: var(--border); margin: 0 0 1.5rem; }
     .card-row { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1rem; }
-    .card-icon { font-size: 1rem; margin-top: 0.05rem; flex-shrink: 0; }
     .card-label {
       font-size: 0.65rem; text-transform: uppercase;
       letter-spacing: 0.1em; color: var(--muted); margin-bottom: 0.15rem;
@@ -426,13 +426,23 @@
     .contact-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.85; margin-bottom: 2.5rem; }
     .contact-cards { display: flex; flex-wrap: wrap; gap: 1rem; }
     .contact-card {
-      flex: 1; min-width: 170px; background: #fff; border: 1.5px solid var(--rose-light);
-      border-radius: 14px; padding: 1.2rem 1.5rem; text-decoration: none; color: var(--text);
-      transition: all 0.25s; display: flex; align-items: center; gap: 0.9rem;
+      flex: 0 0 auto; width: 210px; background: #fff; border: 1.5px solid var(--rose-light);
+      border-radius: 14px; padding: 1.4rem 1.6rem; text-decoration: none; color: var(--text);
+      transition: all 0.25s; display: flex; align-items: center; gap: 1.1rem;
       box-shadow: 0 4px 16px rgba(200,80,106,0.08);
     }
     .contact-card:hover { border-color: var(--rose); transform: translateY(-3px); box-shadow: 0 12px 30px rgba(200,80,106,0.18); }
-    .contact-card-icon { font-size: 1.2rem; }
+    .contact-card-icon {
+      width: 38px; height: 38px;
+      background: var(--rose-pale);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--rose);
+      flex-shrink: 0;
+      transition: background 0.25s, color 0.25s;
+    }
+    .contact-card-icon svg { width: 19px; height: 19px; }
+    .contact-card:hover .contact-card-icon { background: var(--rose); color: #fff; }
     .contact-card-label { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 0.15rem; }
     .contact-card-val { font-size: 0.8rem; font-weight: 500; color: var(--text); }
     /* FOOTER */
@@ -451,6 +461,30 @@
     .hero-content > *:nth-child(3) { animation-delay: 0.35s; }
     .hero-content > *:nth-child(4) { animation-delay: 0.45s; }
     .hero-content > *:nth-child(5) { animation-delay: 0.55s; }
+    .hero-content > *:nth-child(6) { animation-delay: 0.65s; }
+    /* MUSIC CARD */
+    .music-card {
+      margin-left: auto;
+      width: 290px;
+      flex-shrink: 0;
+    }
+    .music-card-msg {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 0.78rem;
+      color: var(--rose);
+      margin-bottom: 0.55rem;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+      text-align: center;
+    }
+    .music-card iframe {
+      display: block;
+      border-radius: 12px;
+      border: none;
+      width: 100%;
+      height: 152px;
+    }
     .hero-visual { opacity: 0; animation: fadeUp 0.9s ease 0.5s forwards; }
     @keyframes fadeUp { to { opacity: 1; transform: none; } }
     @media (max-width: 900px) {
@@ -473,7 +507,7 @@
   <div class="blob blob-2"></div>
   <canvas id="petals"></canvas>
   <nav>
-    <a href="#" class="nav-logo">Josetta Reyes ✦</a>
+    <a href="#" class="nav-logo">Josetta Reyes</a>
     <ul class="nav-links">
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
@@ -481,7 +515,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <span class="nav-badge">✨ Open to work</span>
+    <span class="nav-badge">Open to work</span>
   </nav>
   <section class="hero">
     <div class="hero-content">
@@ -493,43 +527,52 @@
         <span class="filled">Josetta</span>
         <span class="outline">Reyes</span>
       </h1>
-      <div class="hero-title">Software Engineer & Builder of Cool Things</div>
+      <div class="hero-title">Software Engineer & AI Builder</div>
+      <div style="display:inline-flex; align-items:center; gap:0.6rem; margin-top:-0.6rem; margin-bottom:0.4rem;">
+        <span style="flex:1; height:1px; width:28px; background:linear-gradient(90deg, transparent, var(--gold));"></span>
+        <span style="font-family:'Playfair Display',serif; font-style:italic; font-size:clamp(0.78rem,1.2vw,1rem); color:var(--gold); letter-spacing:0.08em; white-space:nowrap;">✦ Salesforce Agentblazer Champion '26 ✦</span>
+        <span style="flex:1; height:1px; width:28px; background:linear-gradient(90deg, var(--gold), transparent);"></span>
+      </div>
       <p class="hero-desc">
         Latina software engineer from Dallas! I build <strong>full-stack applications, ML models, and everything in between</strong>. Fluent in Python, JavaScript, and making complex systems feel effortless.
       </p>
       <div class="hero-cta">
-        <a href="#projects" class="btn btn-primary">See My Work ✦</a>
+        <a href="#projects" class="btn btn-primary">See My Work →</a>
         <a href="#contact" class="btn btn-ghost">Let's Connect</a>
       </div>
     </div>
     <div class="hero-visual">
       <div class="identity-card">
         <div class="card-header">
-          <div class="avatar">
-            <img src="./josetta-reyes.png" alt="Josetta Reyes" onerror="this.style.display='none';this.parentElement.innerHTML='👩🏽‍💻'"/>
+          <div style="display:flex; flex-direction:column; align-items:center; gap:0.6rem;">
+            <div class="avatar">
+              <img src="./josetta-reyes.png" alt="Josetta Reyes" onerror="this.style.display='none';this.parentElement.innerHTML='👩🏽‍💻'"/>
+            </div>
+            <div style="text-align:center;">
+              <div class="card-name">Josetta Reyes</div>
+              <div class="card-role">Software Engineer</div>
+              <div class="card-role">Dallas, TX</div>
+            </div>
           </div>
-          <div>
-            <div class="card-name">Josetta Reyes</div>
-            <div class="card-role">Software Engineer · Dallas, TX</div>
+          <div class="music-card">
+            <div class="music-card-msg">Hit play, I made you a playlist!🩷</div>
+            <iframe src="https://open.spotify.com/embed/playlist/3E6aFi9DqbNe9mp8z92pbr?utm_source=generator" height="100" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
           </div>
         </div>
         <div class="card-divider"></div>
         <div class="card-row">
-          <div class="card-icon">🎓</div>
           <div>
             <div class="card-label">Education</div>
             <div class="card-value">B.S. Software Engineering<br/>University of Texas at Dallas</div>
           </div>
         </div>
         <div class="card-row">
-          <div class="card-icon">💡</div>
           <div>
             <div class="card-label">Specialties</div>
             <div class="card-value">Full Stack · Mobile Dev · Technical Project Management · Backend Dev</div>
           </div>
         </div>
         <div class="card-row">
-          <div class="card-icon">🌎</div>
           <div>
             <div class="card-label">Background</div>
             <div class="card-value">Latina Software Engineer · Bilingual</div>
@@ -538,10 +581,14 @@
         <div class="card-tags">
           <span class="card-tag">React Native</span>
           <span class="card-tag">Python</span>
+          <span class="card-tag">TypeScript</span>
           <span class="card-tag gold">PyTorch</span>
           <span class="card-tag">Firebase</span>
           <span class="card-tag gold">TensorFlow</span>
+          <span class="card-tag gold">Prompt Engineering</span>
+          <span class="card-tag gold">Agentic Systems</span>
           <span class="card-tag">Java</span>
+          <span class="card-tag gold">AWS</span>
         </div>
       </div>
     </div>
@@ -554,27 +601,28 @@
       <div class="skill-card">
         <span class="skill-icon">🌸</span>
         <div class="skill-name">Frontend</div>
-        <div class="skill-detail">React Native, TypeScript, JavaScript, HTML/CSS. I care deeply about beautiful, & accessible UIs.</div>
+        <div class="skill-detail">React, React Native, TypeScript, JavaScript, HTML/CSS. I care deeply about beautiful & accessible UIs.</div>
       </div>
       <div class="skill-card">
         <span class="skill-icon">⚙️</span>
         <div class="skill-name">Backend</div>
-        <div class="skill-detail">Node.js, Python, Flask, Java, C/C++</div>
+        <div class="skill-detail">Python, Flask, Java, C/C++, SQL, Git, GitHub, Expo Router, Firebase</div>
       </div>
       <div class="skill-card">
-        <span class="skill-icon">🧠</span>
+        <span class="skill-icon">📊</span>
         <div class="skill-name">ML / AI</div>
-        <div class="skill-detail">TensorFlow, PyTorch, scikit-learn, LLMs (Ollama), from data pipelines to deployed models.</div>
+        <div class="skill-detail">TensorFlow, PyTorch, Scikit-Learn, LLMs, Prompt Engineering, Agentic Systems, AI Output Evaluation. From data pipelines to deployed models.</div>
       </div>
       <div class="skill-card">
         <span class="skill-icon">🗄️</span>
         <div class="skill-name">Data & DBs</div>
         <div class="skill-detail">SQL, MySQL, Firebase, NumPy, Pandas, Jupyter Notebook, data modeling, and optimization.</div>
+
       </div>
       <div class="skill-card">
         <span class="skill-icon">☕</span>
         <div class="skill-name">Languages</div>
-        <div class="skill-detail">Python, JavaScript, Java, C/C++, SQL, HTML, y un poco de español 🇲🇽</div>
+        <div class="skill-detail">Python, JavaScript, Java, C/C++, SQL, HTML, TypeScript y un poco de español 🇲🇽</div>
       </div>
       <div class="skill-card">
         <span class="skill-icon">📋</span>
@@ -629,9 +677,26 @@
         </div>
       </div>
 
-      <!-- PROJECT 3: LLM Oracle App -->
+      <!-- PROJECT 3: Database Management App -->
       <div class="project-card fade-up">
-        <div class="project-num">03 · AI / Full Stack</div>
+        <div class="project-num">03 · Backend / Full Stack</div>
+        <div class="project-name">Database Management Application</div>
+        <p class="project-desc">
+          Built a <strong>Java application with full database integration</strong> that allows users to add, retrieve, and manage records through SQL queries. Designed a relational schema ensuring data consistency and scalable storage of student/course data. Delivered as a working prototype in a team of four using version control and remote coordination.
+        </p>
+        <div class="project-tags">
+          <span class="ptag ptag-rose">Java</span>
+          <span class="ptag ptag-gold">SQL</span>
+          <span class="ptag ptag-plum">MySQL</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/josetta-reyes" target="_blank" class="plink">GitHub →</a>
+        </div>
+      </div>
+
+      <!-- PROJECT 4: LLM Oracle App -->
+      <div class="project-card fade-up">
+        <div class="project-num">04 · AI / Full Stack</div>
         <div class="project-name">LLM-Powered Oracle App</div>
         <!-- To add a screenshot: upload your image to the repo and replace the src below -->
         <!-- <div class="project-img"><img src="./screenshots/oracle-app.png" alt="Oracle App"/></div> -->
@@ -676,6 +741,23 @@
       </div>
       <div class="community-card fade-up">
         <div class="community-card-top">
+          <span class="community-icon-wrap">🌸</span>
+          <div>
+            <div class="community-role">Vice President</div>
+            <div class="community-org">Sigma Lambda Alpha Sorority, Inc. · UTD</div>
+          </div>
+        </div>
+        <p class="community-desc">
+          Served as VP and New Member Educator for SLA, overseeing onboarding across multiple semesters and representing the chapter in inter-organization leadership councils.
+        </p>
+        <ul class="community-list">
+          <li>Onboarded <strong>15+</strong> new members, increasing retention by 20%</li>
+          <li>Represented SLA in <strong>5+</strong> leadership boards & councils</li>
+          <li>Built partnerships that raised chapter visibility across campus</li>
+        </ul>
+      </div>
+      <div class="community-card fade-up">
+        <div class="community-card-top">
           <span class="community-icon-wrap">🏆</span>
           <div>
             <div class="community-role">SHPE Diligence Award</div>
@@ -713,7 +795,7 @@
           When I'm not coding, you can find me in nature 💚. I'm bilingual 🇲🇽 and proud to be part of a growing community of Latinas in tech.
         </p>
         <div style="margin-top: 2rem;">
-          <a href="#contact" class="btn btn-primary">Let's Work Together ✦</a>
+          <a href="#contact" class="btn btn-primary">Let's Work Together →</a>
         </div>
       </div>
       <div class="fun-facts fade-up">
@@ -723,7 +805,7 @@
           <div class="fun-fact-label">Years Coding</div>
         </div>
         <div class="fun-fact">
-          <div class="fun-fact-icon">🚀</div>
+          <div class="fun-fact-icon">🛠️</div>
           <div class="fun-fact-val">3+</div>
           <div class="fun-fact-label">Projects Shipped</div>
         </div>
@@ -733,7 +815,7 @@
           <div class="fun-fact-label">SWE · UTD</div>
         </div>
         <div class="fun-fact">
-          <div class="fun-fact-icon">🌟</div>
+          <div class="fun-fact-icon">🩷</div>
           <div class="fun-fact-val">200+</div>
           <div class="fun-fact-label">Latinas Impacted</div>
         </div>
@@ -746,28 +828,43 @@
     <h2 class="section-title">Let's <em>Connect</em></h2>
     <div class="contact-inner fade-up">
       <p class="contact-desc">
-        I'm actively looking for full-time roles in software engineering, ML/AI, or technical project management. If you have an exciting opportunity or just want to connect, I'd love to hear from you! 💌
+        I'm actively looking for full-time roles in software engineering, ML/AI, or technical project management. If you have an exciting opportunity or just want to connect, I'd love to hear from you!
       </p>
       <div class="contact-cards">
         <a href="mailto:reyesjosetta@gmail.com" class="contact-card">
-          <span class="contact-card-icon">✉️</span>
+          <span class="contact-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
+          </span>
           <div>
             <div class="contact-card-label">Email</div>
-            <div class="contact-card-val">reyesjosetta@gmail.com</div>
+            <div class="contact-card-val">reyesjosetta</div>
           </div>
         </a>
         <a href="https://linkedin.com/in/josetta-reyes" target="_blank" class="contact-card">
-          <span class="contact-card-icon">💼</span>
+          <span class="contact-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </span>
           <div>
             <div class="contact-card-label">LinkedIn</div>
-            <div class="contact-card-val">linkedin.com/in/josetta-reyes</div>
+            <div class="contact-card-val">josetta-reyes</div>
           </div>
         </a>
         <a href="https://github.com/josetta-reyes" target="_blank" class="contact-card">
-          <span class="contact-card-icon">🐙</span>
+          <span class="contact-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </span>
           <div>
             <div class="contact-card-label">GitHub</div>
-            <div class="contact-card-val">github.com/josetta-reyes</div>
+            <div class="contact-card-val">@josetta-reyes</div>
+          </div>
+        </a>
+        <a href="https://www.salesforce.com/trailblazer/josetta-reyes" target="_blank" class="contact-card">
+          <span class="contact-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
+          </span>
+          <div>
+            <div class="contact-card-label">Trailhead</div>
+            <div class="contact-card-val">josetta-reyes</div>
           </div>
         </a>
       </div>
